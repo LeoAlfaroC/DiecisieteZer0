@@ -55,6 +55,14 @@
             }
         },
         {
+            "Key": "0a9b96d7-6983-4cc0-ab54-40c35261f775",
+            "Value": {
+                "id": "e68ecb0d-1080-4840-9a43-b0f4a92d5a1b",
+                "resourcePath": "sprites\\sprite12\\sprite12.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "0d0d12bf-de19-44e4-baea-4923467e49a9",
             "Value": {
                 "id": "488c2c65-0c3d-4b2b-bc0a-cb719cf5dc89",
@@ -76,6 +84,14 @@
                 "id": "0c4b7abf-f1f4-41bf-9e19-594da48b3f96",
                 "resourcePath": "sprites\\spr_tileLab\\spr_tileLab.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "231027fa-51ca-4f87-bf5b-be19d86d4a18",
+            "Value": {
+                "id": "45248f3e-d164-4fab-8e79-6a2ab1196c27",
+                "resourcePath": "objects\\obj_water\\obj_water.yy",
+                "resourceType": "GMObject"
             }
         },
         {
