@@ -47,7 +47,7 @@ if(keyboard_check_pressed(ord("9")))
 }
 if(keyboard_check_pressed(ord("Q")))
 {
-	show_debug_message(string(despAux))
+	//show_debug_message(string(despAux))
 	obj_player.desp = despAux;
 	instance_destroy(self);
 }

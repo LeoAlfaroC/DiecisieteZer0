@@ -1,5 +1,4 @@
 interactEvent = 0;
-isPresionado = 0;
 cod = "";
 pos = -1;
 despAux = obj_player.desp

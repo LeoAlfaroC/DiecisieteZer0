@@ -54,7 +54,7 @@ if keyboard_check(ord("D")){
 }
 
 if keyboard_check_pressed(ord("E")){
-	if(obj_testInteract.isClose)
+	if(obj_testInteract.isClose && !instance_exists(obj_codInteract))
 	{
 		obj_testInteract.interactActive = true;
 	}
