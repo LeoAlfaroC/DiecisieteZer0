@@ -167,6 +167,14 @@
             }
         },
         {
+            "Key": "709f91eb-6387-49c9-9c14-6b5a634fe334",
+            "Value": {
+                "id": "832c2b04-33c0-455f-a988-ffd772cf8065",
+                "resourcePath": "objects\\obj_food\\obj_food.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "886aae76-4b57-4216-aa87-8da572e74b81",
             "Value": {
                 "id": "c1a01162-7d1e-44d8-9056-12087de3862d",
