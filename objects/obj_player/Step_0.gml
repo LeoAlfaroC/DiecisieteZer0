@@ -53,21 +53,16 @@ if keyboard_check(ord("D")){
 	image_speed = 1;
 }
 
+if keyboard_check_pressed(ord("E")){
+	if(obj_testInteract.isClose)
+	{
+		obj_testInteract.interactActive = true;
+	}
+}
+
 if keyboard_check(vk_nokey){
 	image_speed = 0;
 	image_index = 0;
 }
 
-show_debug_message(string(y-sprite_height/2))
-show_debug_message(string(tilemap_get_at_pixel("TileLayerColisionBlocks",bbox_right + desp, bbox_top))+ "rightBB: "+string(bbox_right));
-show_debug_message(string(tilemap_get_at_pixel("TileLayerColisionBlocks",bbox_left - desp, bbox_top)) + "lefttBB: "+string(bbox_left));
-show_debug_message(string(tilemap_get_at_pixel("TileLayerColisionBlocks",bbox_left, bbox_top- desp)) + "topBB: "+string(bbox_top));
-show_debug_message(string(tilemap_get_at_pixel("TileLayerColisionBlocks",bbox_left, bbox_bottom + desp)) + "bottomtBB: "+string(bbox_bottom));
-
-
-if abs(x - caja.x) < 40 and abs(y - caja.y)  < 40 {
-	alerta_caja.visible = true;
-} else {
-	alerta_caja.visible = false;
-}
 

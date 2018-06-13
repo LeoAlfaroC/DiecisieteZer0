@@ -1,5 +1,13 @@
 
-if keyboard_check_released(ord("U"))
+if(collision_circle(x,y,30,obj_player, false, false))
 {
-	instance_create_layer(x, y, "Show_Actions", obj_codInteract);
+	isClose = true;
+}
+else
+{
+	isClose = false;
+}
+if(interactActive){
+	instance_create_layer(0,0,"Show_Actions", obj_codInteract)
+	interactActive = false;
 }
