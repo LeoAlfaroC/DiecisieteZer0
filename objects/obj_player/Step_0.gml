@@ -64,3 +64,10 @@ show_debug_message(string(tilemap_get_at_pixel("TileLayerColisionBlocks",bbox_le
 show_debug_message(string(tilemap_get_at_pixel("TileLayerColisionBlocks",bbox_left, bbox_top- desp)) + "topBB: "+string(bbox_top));
 show_debug_message(string(tilemap_get_at_pixel("TileLayerColisionBlocks",bbox_left, bbox_bottom + desp)) + "bottomtBB: "+string(bbox_bottom));
 
+
+if abs(x - caja.x) < 40 and abs(y - caja.y)  < 40 {
+	alerta_caja.visible = true;
+} else {
+	alerta_caja.visible = false;
+}
+
