@@ -1,8 +1,12 @@
 //variables
 image_speed = 0;
-desp = 5; //desplazamiento
+sprite_index = spr_player;
+desp = 3; //desplazamiento
 backId = layer_background_get_id("Backgrounds_1"); //sacando id del background
-
+alarm[0] = 1
+xFront = 0;
+yFront = 0;
+isAttacking = false;
 
 //window_set_fullscreen(true);
 

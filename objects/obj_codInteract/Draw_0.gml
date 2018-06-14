@@ -3,4 +3,4 @@
 
 draw_self();
 
-draw_text_transformed_color(x-60,y-160,cod,3,3,0,c_red,c_red,c_red,c_red,1)
+draw_text_transformed_color(x-100,y-160,cod,3,3,0,c_red,c_red,c_red,c_red,1)
