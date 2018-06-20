@@ -10,7 +10,9 @@ ListInvOriginY = 680;
 sizeInventory = 0;
 ListPos = 0;
 
+
 for(var i = 0; i < 10; i++)
 {
 	ListInventory[i] = -1;
+	ListInvStr[i] = "";
 }

@@ -6,6 +6,7 @@ codResp = "1 2 3 9 "
 locked = true;
 timer = 0
 alarmGo = false;
+Resolvio = false;
 image_xscale = 0.6;
 image_yscale = 0.6;
 //crear link con objeto que desbloquea

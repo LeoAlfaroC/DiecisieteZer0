@@ -6,6 +6,15 @@ if(keyboard_check_pressed(ord("Q")))
 
 if(cod==codResp || cod == "correct")
 {
+	if(!Resolvio)
+	{
+		obj_HUD.sizeInventory++;
+		obj_HUD.ListInventory[obj_HUD.sizeInventory-1] = 2 // 0 es llavecita
+		obj_HUD.ListInvStr[obj_HUD.sizeInventory-1] = "Key"
+		Resolvio = true;
+	}
+	
+	
 	if(alarmGo==false){alarm[0] = room_speed*3; alarmGo = true}
 	if(alarm[0]<room_speed*2){
 	obj_player.desp = despAux;

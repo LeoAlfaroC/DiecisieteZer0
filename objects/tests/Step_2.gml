@@ -10,6 +10,7 @@ if (counter == 1) {
 	runTests = false;
 }
 
+
 if (runTests == true) {
 	++counter;
 }

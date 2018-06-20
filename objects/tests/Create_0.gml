@@ -1,2 +1,2 @@
-runTests = true;
+runTests = false;
 counter = 0;
