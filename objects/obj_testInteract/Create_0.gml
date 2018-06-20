@@ -4,3 +4,4 @@
 isClose = false;
 codEventInteract = 2;
 interactActive = false;
+interface_id = pointer_null;

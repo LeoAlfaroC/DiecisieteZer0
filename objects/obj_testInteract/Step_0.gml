@@ -8,7 +8,7 @@ else
 	isClose = false;
 }
 if(interactActive){
-	instance_create_layer(0,0,"Show_Actions", obj_codInteract)
+	interface_id = instance_create_layer(0,0,"Show_Actions", obj_codInteract)
 	interactActive = false;
 }
 
