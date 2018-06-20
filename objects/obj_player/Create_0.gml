@@ -7,7 +7,7 @@ alarm[0] = 1
 xFront = 0;
 yFront = 0;
 isAttacking = false;
-
+window_set_size(700,700);
 //window_set_fullscreen(true);
 
 layer_background_xscale(backId, 3);

@@ -101,6 +101,17 @@ if keyboard_check_pressed(ord("E")){
 	}
 }
 
+if keyboard_check_pressed(ord("2")){
+	if(obj_HUD.drawListInventory)
+	{
+		obj_HUD.drawListInventory = false;
+	}
+	else
+	{
+		obj_HUD.drawListInventory = true;
+	}
+}
+
 if keyboard_check_pressed(vk_space){
 	
 	isAttacking = true;
