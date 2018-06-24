@@ -2,6 +2,7 @@
 image_speed = 0;
 sprite_index = spr_player;
 desp = 3; //desplazamiento
+colisionSpeed = desp +2;
 backId = layer_background_get_id("Backgrounds_1"); //sacando id del background
 alarm[0] = 1
 xFront = 0;

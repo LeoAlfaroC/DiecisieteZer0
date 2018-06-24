@@ -37,7 +37,6 @@ if (counter == 3) {
 	}
 	runTests = false;
 	counter = 0;
-	obj_player.Create;
 }
 
 if (runTests == true) {

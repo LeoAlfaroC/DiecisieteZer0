@@ -1,4 +1,4 @@
-if keyboard_check(ord("W")){
+if (keyboard_check(ord("W")) and place_free(x,y - colisionSpeed)){
 	if tilemap_get_at_pixel("TileLayerColisionBlocks",bbox_left - 1, y + sprite_height/2) != 0 x = x + 1;
 	if tilemap_get_at_pixel("TileLayerColisionBlocks",bbox_right + 1, y + sprite_height/2) != 0 x = x - 1;//mod podria ser en vez de sumarle 1... mo tan importante
 	if tilemap_get_at_pixel("TileLayerColisionBlocks",bbox_left, bbox_top - desp) != 0 || tilemap_get_at_pixel("TileLayerColisionBlocks",bbox_right, bbox_top - desp) != 0{
@@ -22,7 +22,7 @@ if keyboard_check(ord("W")){
 	xFront = x;
 	yFront = y - 40;
 }
-if keyboard_check(ord("A")){
+if (keyboard_check(ord("A")) and place_free(x - colisionSpeed,y)){
 	if tilemap_get_at_pixel("TileLayerCOlisionBlocks", x + sprite_width/2, bbox_top - 1) != 0 y = y + 1;
 	if tilemap_get_at_pixel("TileLayerCOlisionBlocks", x + sprite_width/2, bbox_bottom + 1) != 0 y = y - 1;
 	if tilemap_get_at_pixel("TileLayerColisionBlocks",bbox_left - desp, bbox_top) != 0 || tilemap_get_at_pixel("TileLayerColisionBlocks",bbox_left - desp, bbox_bottom) != 0{
@@ -46,7 +46,7 @@ if keyboard_check(ord("A")){
 	xFront = x - 20;
 	yFront = y;
 }
-if keyboard_check(ord("S")){
+if (keyboard_check(ord("S")) and place_free(x,y + colisionSpeed)){
 	if tilemap_get_at_pixel("TileLayerColisionBlocks",bbox_left - 1, y + sprite_height/2) != 0 x = x + 1;
 	if tilemap_get_at_pixel("TileLayerColisionBlocks",bbox_right + 1, y + sprite_height/2) != 0 x = x - 1; // Compensacion por cambio de width en spirte
 	if tilemap_get_at_pixel("TileLayerColisionBlocks",bbox_left, bbox_bottom + desp) != 0 || tilemap_get_at_pixel("TileLayerColisionBlocks",bbox_right, bbox_bottom + desp) != 0{
@@ -69,7 +69,7 @@ if keyboard_check(ord("S")){
 	xFront = x;
 	yFront = y + 40;
 }
-if keyboard_check(ord("D")){
+if (keyboard_check(ord("D")) and place_free(x + colisionSpeed,y)){
 	if tilemap_get_at_pixel("TileLayerCOlisionBlocks", x + sprite_width/2, bbox_top - 1) != 0 y = y + 1; //sprite mas alto respecto a x
 	if tilemap_get_at_pixel("TileLayerCOlisionBlocks", x + sprite_width/2, bbox_bottom + 1) != 0 y = y - 1;
 	if tilemap_get_at_pixel("TileLayerColisionBlocks",bbox_right + desp, bbox_top) != 0 || tilemap_get_at_pixel("TileLayerColisionBlocks",bbox_right + desp, bbox_bottom) != 0{
@@ -117,6 +117,9 @@ if keyboard_check_pressed(vk_space){
 	isAttacking = true;
 	if(collision_line(x,y,xFront,yFront,obj_enemy, false, true)){
 		obj_enemy.hitPoints -= 30;
+	}
+	if(collision_line(x,y,xFront,yFront,obj_obstacle, false, true)){
+		obj_obstacle.hitPoints -= 30;
 	}
 }
 
