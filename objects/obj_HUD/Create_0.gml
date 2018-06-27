@@ -9,7 +9,8 @@ ListInvOriginX = 80;
 ListInvOriginY = 680;
 sizeInventory = 0;
 ListPos = 0;
-
+drawMessaveInv = false;
+messageInv = "";
 
 for(var i = 0; i < 10; i++)
 {

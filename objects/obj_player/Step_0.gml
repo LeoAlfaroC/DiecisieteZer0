@@ -99,6 +99,10 @@ if keyboard_check_pressed(ord("E")){
 	{
 		obj_testInteract.interactActive = true;
 	}
+	if(obj_imgInteract.isClose && !instance_exists(obj_img))
+	{
+		obj_imgInteract.interactActive = true;
+	}
 }
 
 if keyboard_check_pressed(ord("2")){
@@ -112,15 +116,98 @@ if keyboard_check_pressed(ord("2")){
 	}
 }
 
-if keyboard_check_pressed(vk_space){
+if keyboard_check_pressed(vk_enter){
 	
-	isAttacking = true;
-	if(collision_line(x,y,xFront,yFront,obj_enemy, false, true)){
-		obj_enemy.hitPoints -= 30;
+	if(obj_HUD.sizeInventory > 0)
+	{
+	var instKey = obj_HUD.ListInventory[obj_HUD.ListPos]; //instkey no es instkey
+	var inst = collision_line(x,y,xFront,yFront,obj_door, false, true)
+	var instKey = obj_HUD.ListInventory[obj_HUD.ListPos];
+	if(instKey.object_index == obj_key)
+		{
+		if inst != noone
+		{
+		
+		
+			show_debug_message(string(instKey))
+			show_debug_message("HOLAHOLAGOLA")
+			if(instKey.idKey == inst.idDoor)
+			{
+				instance_destroy(inst);
+				instance_destroy(instKey);
+				obj_HUD.ListInventory[obj_HUD.ListPos] = obj_HUD.ListInventory[obj_HUD.sizeInventory-1];
+				obj_HUD.ListInvStr[obj_HUD.ListPos] = obj_HUD.ListInvStr[obj_HUD.sizeInventory-1];
+				obj_HUD.ListInvStr[obj_HUD.sizeInventory-1] = "";
+				obj_HUD.ListInventory[obj_HUD.sizeInventory-1] = -1;
+				obj_HUD.sizeInventory -= 1;
+				if(obj_HUD.sizeInventory > 1)obj_HUD.ListPos -=1;
+					
+			}
+		}
+		else 
+		{
+			obj_HUD.drawMessaveInv = true;
+			obj_HUD.alarm[0] = room_speed*5;
+			obj_HUD.messageInv="You must be in front of a door to use a key"
+		}
 	}
-	if(collision_line(x,y,xFront,yFront,obj_obstacle, false, true)){
-		obj_obstacle.hitPoints -= 30;
+	
+	if(instKey == 0)
+		{
+			obj_HUD.drawMessaveInv = true;
+			obj_HUD.alarm[0] = room_speed*5;
+			thirst -= 20;
+			if(thirst <0)
+			{	thirst = 0
+				obj_HUD.messageInv="You are not thirsty anymore(thirst at 0)"
+			}
+			else obj_HUD.messageInv="You used a water bottle"
+			
+			obj_HUD.ListInventory[obj_HUD.ListPos] = obj_HUD.ListInventory[obj_HUD.sizeInventory-1];
+			obj_HUD.ListInvStr[obj_HUD.ListPos] = obj_HUD.ListInvStr[obj_HUD.sizeInventory-1];
+			obj_HUD.ListInvStr[obj_HUD.sizeInventory-1] = "";
+			obj_HUD.ListInventory[obj_HUD.sizeInventory-1] = -1;
+			obj_HUD.sizeInventory -= 1;
+			if(obj_HUD.sizeInventory > 1)obj_HUD.ListPos -=1;
+		}
+	if(instKey == 1)
+		{
+			obj_HUD.drawMessaveInv = true;
+			obj_HUD.alarm[0] = room_speed*5;
+			hunger -= 20;
+			if(hunger < 0)
+			{	hunger = 0
+				obj_HUD.messageInv="You are not hungry anymore(hunger at 0)"
+			}
+			else obj_HUD.messageInv="You used a foodbar"
+			
+			obj_HUD.ListInventory[obj_HUD.ListPos] = obj_HUD.ListInventory[obj_HUD.sizeInventory-1];
+			obj_HUD.ListInvStr[obj_HUD.ListPos] = obj_HUD.ListInvStr[obj_HUD.sizeInventory-1];
+			obj_HUD.ListInvStr[obj_HUD.sizeInventory-1] = "";
+			obj_HUD.ListInventory[obj_HUD.sizeInventory-1] = -1;
+			obj_HUD.sizeInventory -= 1;
+			if(obj_HUD.sizeInventory > 1)obj_HUD.ListPos -=1;
+		}	
 	}
+	else
+	{
+		obj_HUD.drawMessaveInv = true;
+		obj_HUD.alarm[0] = room_speed*5;
+		obj_HUD.messageInv="Your have no items to use"
+	}
+}
+if keyboard_check_pressed(vk_space){
+		var inst = collision_line(x,y,xFront,yFront,obj_enemy, false, true)
+		if inst != noone
+		{
+		inst.hitPoints -= 30;
+		}
+		
+		var inst = collision_line(x,y,xFront,yFront,obj_obstacle, false, true)
+		if inst != noone
+		{
+		inst.hitPoints -= 30;
+		}
 }
 
 if keyboard_check(vk_nokey){

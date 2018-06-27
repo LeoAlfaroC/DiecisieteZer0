@@ -9,7 +9,8 @@ alarmGo = false;
 Resolvio = false;
 image_xscale = 0.6;
 image_yscale = 0.6;
-//crear link con objeto que desbloquea
+key = instance_create_layer(-4,-4, "Instances", obj_key)
+key.idKey = 3
 
 obj_player.desp = 0;
 

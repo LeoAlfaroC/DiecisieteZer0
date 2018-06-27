@@ -8,9 +8,14 @@ if(cod==codResp || cod == "correct")
 {
 	if(!Resolvio)
 	{
+		
+		key = instance_create_layer(-4,-4, "Instances", obj_key)
+		key.idKey = 3
 		obj_HUD.sizeInventory++;
-		obj_HUD.ListInventory[obj_HUD.sizeInventory-1] = 2 // 0 es llavecita
-		obj_HUD.ListInvStr[obj_HUD.sizeInventory-1] = "Key"
+		obj_HUD.ListInventory[obj_HUD.sizeInventory-1] = (key); // insertando llavecita
+		key.itemStr = "Key" + string(key.idKey);
+		obj_HUD.ListInvStr[obj_HUD.sizeInventory-1] = key.itemStr;
+		
 		Resolvio = true;
 	}
 	
