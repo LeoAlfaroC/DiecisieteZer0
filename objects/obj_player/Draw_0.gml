@@ -6,5 +6,5 @@ draw_self()
 
 
 if(isAttacking){
-draw_line(x,y, xFront, yFront);
+draw_line_width(x,y, xFront, yFront,2);
 }

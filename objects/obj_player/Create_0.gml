@@ -13,6 +13,7 @@ isAttacking = false;
 hp = 100;
 thirst = 51;
 hunger = 51;
+isHit = false;
 
 
 

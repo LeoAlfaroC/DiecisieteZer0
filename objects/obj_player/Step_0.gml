@@ -20,7 +20,7 @@ if (keyboard_check(ord("W")) and place_free(x,y - colisionSpeed)){
 		if(image_index > 5)image_index = 3;	
 	}
 	xFront = x;
-	yFront = y - 40;
+	yFront = y - 50;
 }
 if (keyboard_check(ord("A")) and place_free(x - colisionSpeed,y)){
 	if tilemap_get_at_pixel("TileLayerCOlisionBlocks", x + sprite_width/2, bbox_top - 1) != 0 y = y + 1;
@@ -43,7 +43,7 @@ if (keyboard_check(ord("A")) and place_free(x - colisionSpeed,y)){
 		image_index+=1;
 		if(image_index > 8)image_index = 6;	
 	}
-	xFront = x - 20;
+	xFront = x - 30;
 	yFront = y;
 }
 if (keyboard_check(ord("S")) and place_free(x,y + colisionSpeed)){
@@ -67,7 +67,7 @@ if (keyboard_check(ord("S")) and place_free(x,y + colisionSpeed)){
 		if(image_index > 2)image_index = 0;	
 	}
 	xFront = x;
-	yFront = y + 40;
+	yFront = y + 50;
 }
 if (keyboard_check(ord("D")) and place_free(x + colisionSpeed,y)){
 	if tilemap_get_at_pixel("TileLayerCOlisionBlocks", x + sprite_width/2, bbox_top - 1) != 0 y = y + 1; //sprite mas alto respecto a x
@@ -90,7 +90,7 @@ if (keyboard_check(ord("D")) and place_free(x + colisionSpeed,y)){
 		image_index+=1;
 		if(image_index > 8)image_index = 6;	
 	}
-	xFront = x + 20;
+	xFront = x + 30;
 	yFront = y;
 }
 
@@ -200,6 +200,7 @@ if keyboard_check_pressed(vk_space){
 		var inst = collision_line(x,y,xFront,yFront,obj_enemy, false, true)
 		if inst != noone
 		{
+		inst.golpeado = true;
 		inst.hitPoints -= 30;
 		}
 		
@@ -208,6 +209,9 @@ if keyboard_check_pressed(vk_space){
 		{
 		inst.hitPoints -= 30;
 		}
+		isAttacking = true;
+		thirst+=1;
+		alarm[4] = 1*room_speed
 }
 
 if keyboard_check(vk_nokey){
@@ -215,5 +219,14 @@ if keyboard_check(vk_nokey){
 	if(image_index<=5 && image_index>=3){image_index = 4;}
 	if(image_index>=6){image_index = 7;}
 }
+if(isHit)
+{
+	alarm[3] = 0.2*room_speed;
+	image_blend=c_red
+	isHit = false;
+}
 
-
+if(hp <= 0 or thirst>100 or hunger>100)
+{
+	game_restart()
+}
